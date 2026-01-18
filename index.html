@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skyline Blasters</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">Skyline Blasters</div>
+      <div class="meta" id="bestScore">BEST 0</div>
+    </header>
+
+    <main class="screen screen--title" id="titleScreen">
+      <div class="title-card">
+        <p class="eyebrow">スマホ対応ブラウザシューティング</p>
+        <h1>Skyline Blasters</h1>
+        <p class="subtitle">タップで移動、撃ちまくれ。</p>
+
+        <div class="difficulty">
+          <button class="btn" data-difficulty="easy">EASY</button>
+          <button class="btn btn--primary" data-difficulty="normal">NORMAL</button>
+          <button class="btn" data-difficulty="hard">HARD</button>
+        </div>
+
+        <div class="tips">
+          <div class="tip">🎯 スコアを伸ばそう</div>
+          <div class="tip">🛡️ 敵に当たるとゲームオーバー</div>
+          <div class="tip">🔊 効果音あり</div>
+        </div>
+      </div>
+    </main>
+
+    <main class="screen screen--game" id="gameScreen" hidden>
+      <div class="hud">
+        <div class="hud__item">SCORE <span id="score">0</span></div>
+        <div class="hud__item">DIFFICULTY <span id="difficultyLabel">NORMAL</span></div>
+      </div>
+      <canvas id="gameCanvas" width="480" height="720"></canvas>
+      <div class="touch-hint">ドラッグで移動</div>
+    </main>
+
+    <main class="screen screen--gameover" id="gameOverScreen" hidden>
+      <div class="gameover-card">
+        <p class="eyebrow">GAME OVER</p>
+        <h2>スコア <span id="finalScore">0</span></h2>
+        <p class="subtitle" id="resultMessage">もう一度挑戦しよう！</p>
+        <div class="actions">
+          <button class="btn btn--primary" id="retryButton">もう一度</button>
+          <button class="btn" id="backButton">タイトルへ</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
